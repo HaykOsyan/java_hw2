@@ -79,36 +79,96 @@ package homework2;
 //     }
 // }
 
+// public class program {
+
+//     public static void main(String[] args) {
+//         String[] headers = { "Name", "Age", "City" };
+//         String[][] data = {
+//                 { "John", "30", "New York" },
+//                 { "Alice", "25", "Los Angeles" },
+//                 { "Bob", "35", "Chicago" }
+//         };
+//         String csv = generateCSV(headers, data);
+//         System.out.println(csv);
+//     }
+
+//     public static String generateCSV(String[] headers, String[][] data) {
+//         StringBuilder sb = new StringBuilder();
+//         appendArray(sb, headers);
+//         sb.append("\n");
+//         for (String[] row : data) {
+//             appendArray(sb, row);
+//             sb.append("\n");
+//         }
+//         return sb.toString();
+//     }
+
+//     public static void appendArray(StringBuilder sb, String[] array) {
+//         for (int i = 0; i < array.length; i++) {
+//             if (i > 0) {
+//                 sb.append(",");
+//             }
+//             sb.append(array[i]);
+//         }
+//     }
+// }
+/**
+ * program
+ */
+
+// Задача 4. Логирование операций с массивом во время поиска
+// минимального и максимального элементов
+// Реализуйте метод поиска минимального и максимального элементов массива.
+// После нахождения каждого элемента (минимального и максимального),
+// сделайте запись в лог-файл log.txt в формате год-месяц-день
+// час:минуты {минимальный элемент}, {максимальный элемент}.
+
+import java.time.LocalDateTime;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class program {
 
     public static void main(String[] args) {
-        String[] headers = { "Name", "Age", "City" };
-        String[][] data = {
-                { "John", "30", "New York" },
-                { "Alice", "25", "Los Angeles" },
-                { "Bob", "35", "Chicago" }
-        };
-        String csv = generateCSV(headers, data);
-        System.out.println(csv);
+        int[] numbers = { 77, 156, 6056, -21, 799, 654, 23, 33, 44, 55, -66, -1, 4 };
+        // System.out.println(maxArray(numbers));
+        // System.out.println(minArray(numbers));
+        WriteToFile("minimum is --->" + minArray(numbers) + "maximum is --->" + maxArray(numbers) + "founded at"
+                + LocalDateTime.now());
     }
 
-    public static String generateCSV(String[] headers, String[][] data) {
-        StringBuilder sb = new StringBuilder();
-        appendArray(sb, headers);
-        sb.append("\n");
-        for (String[] row : data) {
-            appendArray(sb, row);
-            sb.append("\n");
-        }
-        return sb.toString();
-    }
-
-    public static void appendArray(StringBuilder sb, String[] array) {
-        for (int i = 0; i < array.length; i++) {
-            if (i > 0) {
-                sb.append(",");
+    public static int maxArray(int[] arr) {
+        int max = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i];
+                WriteToFile("Found new maximum at  " + LocalDateTime.now() + "----->" + max);
             }
-            sb.append(array[i]);
+        }
+        return max;
+    }
+
+    public static int minArray(int[] arr) {
+        int min = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (min > arr[i]) {
+                min = arr[i];
+                WriteToFile("Found new minimum at  " + LocalDateTime.now() + "----->" + min);
+            }
+        }
+        return min;
+    }
+
+    public static void WriteToFile(String info) {
+        try {
+            FileWriter myWriter = new FileWriter("log.txt", true);
+            myWriter.write("\n" + info);
+            myWriter.close();
+            System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
         }
     }
+
 }

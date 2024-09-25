@@ -1,0 +1,24 @@
+
+Found new maximum   77
+Found new maximum   156
+Found new maximum   6056
+asdasvcbcvbcvbda
+Found new maximum at  2024-09-25T14:42:45.21864660077
+Found new maximum at  2024-09-25T14:42:45.229640156
+Found new maximum at  2024-09-25T14:42:45.2296406056
+Found new maximum at  2024-09-25T14:47:23.95397260077
+Found new maximum at  2024-09-25T14:47:23.960967900156
+Found new maximum at  2024-09-25T14:47:23.9619673006056
+Found new minimum at  2024-09-25T14:49:19.566966800-21
+Found new minimum at  2024-09-25T14:49:19.579959200-66
+Found new maximum at  2024-09-25T14:50:08.177973300----->77
+Found new maximum at  2024-09-25T14:50:08.188967800----->156
+Found new maximum at  2024-09-25T14:50:08.189967100----->6056
+Found new minimum at  2024-09-25T14:50:08.191964600----->-21
+Found new minimum at  2024-09-25T14:50:08.195963----->-66
+Found new minimum at  2024-09-25T14:52:32.821763300----->-21
+Found new minimum at  2024-09-25T14:52:32.833753900----->-66
+Found new maximum at  2024-09-25T14:52:32.833753900----->77
+Found new maximum at  2024-09-25T14:52:32.835753300----->156
+Found new maximum at  2024-09-25T14:52:32.835753300----->6056
+minimum is --->-66maximum is --->6056founded at2024-09-25T14:52:32.836752600
