@@ -78,3 +78,37 @@ package homework2;
 //         }
 //     }
 // }
+
+public class program {
+
+    public static void main(String[] args) {
+        String[] headers = { "Name", "Age", "City" };
+        String[][] data = {
+                { "John", "30", "New York" },
+                { "Alice", "25", "Los Angeles" },
+                { "Bob", "35", "Chicago" }
+        };
+        String csv = generateCSV(headers, data);
+        System.out.println(csv);
+    }
+
+    public static String generateCSV(String[] headers, String[][] data) {
+        StringBuilder sb = new StringBuilder();
+        appendArray(sb, headers);
+        sb.append("\n");
+        for (String[] row : data) {
+            appendArray(sb, row);
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+
+    public static void appendArray(StringBuilder sb, String[] array) {
+        for (int i = 0; i < array.length; i++) {
+            if (i > 0) {
+                sb.append(",");
+            }
+            sb.append(array[i]);
+        }
+    }
+}
